@@ -29,3 +29,19 @@
 # print(r.status_code)  # spausdiname status code (200 = OK, 404 = Not Found, ir t.t. galima pasiguglinti http status codes)
 # end_time = time()  
 # print(end_time - start_time)  # atspausdiname laiką, per kurį gaovme atsakymą
+import numpy as np
+
+vektoriukas = np.arange(1,101)
+
+def vektoriukui(number):
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
+
+nauja_funkcija = np.vectorize(vektoriukui)
+
+atsakymas = vektoriukas[nauja_funkcija(vektoriukas)]
+
+print(atsakymas)
+
